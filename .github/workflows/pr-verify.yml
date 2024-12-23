@@ -1,7 +1,6 @@
 
 name: PR Verify
 
-
 on:
   pull_request:
     branches: [ "main" ]
