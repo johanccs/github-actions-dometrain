@@ -10,6 +10,6 @@ namespace github_actions.Controllers
     [Route("api/[controller]")]
     public class HelloWorldController : ControllerBase
     {
-        
+
     }
 }
