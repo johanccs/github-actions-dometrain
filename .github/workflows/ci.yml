@@ -31,5 +31,12 @@ jobs:
       - name: dotnet publish
         run: dotnet publish GithubActions.sln  --configuration Release -o artifacts
         
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dometrain-artifact
+          path: artifacts
+      
+        
        
 
