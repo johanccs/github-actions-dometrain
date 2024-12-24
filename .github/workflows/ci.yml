@@ -1,0 +1,35 @@
+﻿
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: CI job
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0
+
+      # Build project in next step (dotnet test).
+      # - name: Build with dotnet
+      #   run: dotnet build --configuration Release
+
+      - name: dotnet tests
+        run: dotnet test --configuration Release
+
+      #- name: format
+      #  run: dotnet format -v detailed --verify-no-changes
+       
+      - name: dotnet publish
+        run: dotnet publish GithubActions.sln  --configuration Release -o artifacts
+        
+       
+
