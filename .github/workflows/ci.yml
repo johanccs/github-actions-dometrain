@@ -44,7 +44,7 @@ jobs:
     name: Deploy Dev job
     needs: build
     
-    uses: ./github/workflows/step-deploy.yml
+    uses: ./.github/workflows/step-deploy.yml
     with:
       env: dev
 
@@ -52,7 +52,7 @@ jobs:
     name: Deploy Prod job
     needs: deploy_dev
     
-    uses: ./github/workflows/step-deploy.yml
+    uses: ./.github/workflows/step-deploy.yml
     with:
       env: prod
    
